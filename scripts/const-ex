@@ -1,0 +1,7 @@
+
+
+const z1;
+console.log('The value of z1 is ' + z1); // The value of x1 is undefined
+
+console.log('The value of z1 is ' + z1); // Uncaught ReferenceError: y1 is not defined
+const z1;

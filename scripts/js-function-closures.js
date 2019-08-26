@@ -10,10 +10,9 @@ function add() {
   return counter; 
 }
 
-add();
-add();
-console.log(add());
 
+console.log(add());
+console.log(add());
 
 //JavaScript Closures
 //Remember self-invoking functions? What does this function do?
@@ -24,13 +23,14 @@ console.log(add());
 //This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
 //The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
 
-var add1 = (function () {
+var add1 = ( function () {
   var counter = 0;
   return function () {counter += 1; return counter}
 })();
 
-add1();
-add1();
-console.log(add1());
+console.log('----------')
+console.log( (typeof add1 === 'function') );
+console.log(add1());  // at this call, the return is inner function and counter is set to 1.
+console.log(add1());  // at this call, here we call add1 which is actually holding inner function (from above line) and hence the counter is plus 1 so we have counter 2.
+console.log(add1());  // here we call add1 which is actually holding inner function, // the counter is now 3
 
-// the counter is now 3
